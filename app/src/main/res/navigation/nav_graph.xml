@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/start_frag">
+
+    <fragment
+        android:id="@+id/start_frag"
+        android:name="com.esoapps.bankingapp.ui.fragments.start.StartFragment"
+        android:label="start_frag"
+        tools:layout="@layout/start_fragment">
+        <action
+            android:id="@+id/move_all_users"
+            app:destination="@+id/all_users_frag"
+
+            />
+        <action
+            android:id="@+id/move_to_all_transactions"
+            app:destination="@+id/all_transactions_fragment"
+
+
+
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/all_users_frag"
+        android:name="com.esoapps.bankingapp.ui.fragments.usersFragments.AllUsersFragment"
+        android:label="all_users_frag"
+        tools:layout="@layout/all_users_fragment">
+        <action
+            android:id="@+id/user_details_frag"
+            app:destination="@+id/user_details_frag"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_graph"
+
+            />
+        <argument
+            android:name="fromStart"
+            app:argType="boolean" />
+
+        <argument
+            android:name="amount"
+            app:argType="integer" />
+
+        <argument
+            app:nullable="true"
+            android:name="currentUser"
+            app:argType="com.esoapps.bankingapp.data.User" />
+
+
+        <action
+            android:id="@+id/move_start_frag"
+            app:destination="@+id/start_frag"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_graph"
+
+            />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/user_details_frag"
+        android:name="com.esoapps.bankingapp.ui.fragments.usersFragments.UserDetailsFragment"
+        android:label="user_details_frag"
+        tools:layout="@layout/user_details_fragment">
+        <action
+            android:id="@+id/all_users_frag"
+            app:destination="@+id/all_users_frag"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_graph"
+            />
+
+        <argument
+            android:name="currentUser"
+            app:argType="com.esoapps.bankingapp.data.User" />
+
+
+        <action
+            android:id="@+id/move_start_frag"
+            app:destination="@+id/start_frag"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/nav_graph"
+
+            />
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/all_transactions_fragment"
+        android:name="com.esoapps.bankingapp.ui.fragments.transactionsFragments.AllTransactionFragment"
+        android:label="all_transactions_fragment"
+        tools:layout="@layout/all_transactions_fragment"/>
+
+
+</navigation>

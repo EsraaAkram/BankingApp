@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.esoapps.bankingapp.ui.activities.MainViewModel" />
+
+        <variable
+            name="element"
+            type="com.esoapps.bankingapp.data.User" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/bg_theme_dark_blue"
+
+        >
+
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+
+            android:gravity="center"
+            android:padding="@dimen/_9sdp"
+
+
+            android:text="@{element.name}"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_21ssp"
+
+            android:textStyle="bold"
+
+            app:layout_constraintBottom_toTopOf="@+id/mailTv"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Esraa Akram"
+            tools:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/mailTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_2sdp"
+
+
+            android:gravity="center"
+            android:text="@{element.mail}"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+
+
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+
+            app:drawableStartCompat="@drawable/ic_mail_lite_yellow"
+            app:layout_constraintBottom_toTopOf="@+id/balanceTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTv"
+
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="totalappsingplay@esoapps.com" />
+
+        <TextView
+            android:id="@+id/balanceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/_10sdp"
+            android:drawablePadding="@dimen/_2sdp"
+
+
+            android:gravity="center"
+            app:balance="@{element.currentBalance}"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+
+
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="bold"
+
+            app:drawableStartCompat="@drawable/ic_money_lite_yellow"
+            app:layout_constraintBottom_toTopOf="@+id/transferBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/mailTv"
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="0.0" />
+
+
+        <EditText
+            android:id="@+id/amountEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginStart="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+
+            android:layout_marginEnd="@dimen/_60sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+
+
+            android:background="@color/white"
+            android:hint="@string/amount"
+            android:textAllCaps="false"
+            android:textColor="@color/colorThemeDarkBlue"
+            android:textSize="@dimen/_18ssp"
+
+            android:inputType="numberSigned"
+            app:layout_constraintBottom_toTopOf="@+id/transferBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            android:padding="@dimen/_10sdp"
+            />
+
+        <Button
+            android:id="@+id/transferBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+
+            android:layout_marginEnd="@dimen/_60sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+
+
+            android:background="@color/colorAccent"
+            android:text="@string/transfer"
+            android:textAllCaps="false"
+            android:textColor="@color/colorThemeDarkBlue"
+            android:textSize="@dimen/_18ssp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

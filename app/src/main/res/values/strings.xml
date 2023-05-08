@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BankingApp</string>
+
+    <string name="all_users">All Users</string>
+    <string name="all_transactions">All Transactions</string>
+    <string name="amount">amount,Ex:100</string>
+    <string name="transfer">Transfer</string>
+
+    <string name="no_transactions">No Transactions Yet</string>
+    <string name="transfer_to">Transfer To:</string>
+</resources>

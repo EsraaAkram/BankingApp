@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="element"
+            type="com.esoapps.bankingapp.data.Transaction" />
+
+
+        <variable
+            name="listener"
+            type="com.esoapps.bankingapp.ui.adapters.TransactionAdapter.OnItemClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/bg_theme_dark_blue"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="@dimen/_10sdp"
+
+        android:paddingEnd="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_10sdp"
+
+        >
+
+
+        <TextView
+            android:id="@+id/fromTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+
+            android:gravity="center"
+            android:padding="@dimen/_9sdp"
+
+
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+
+            app:from="@{element.fromUser.name}"
+
+            app:layout_constraintBottom_toTopOf="@+id/toTv"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="Esraa Akram"
+            tools:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/toTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+
+            android:padding="@dimen/_9sdp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+
+            android:textStyle="bold"
+
+
+            app:layout_constraintBottom_toTopOf="@+id/amountTv"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fromTv"
+
+            app:layout_constraintVertical_bias="0.5"
+            app:to="@{element.toUser.name}"
+            tools:text="Esraa Akram"
+            tools:textColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/amountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+
+
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="@dimen/_9sdp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+
+            android:textColor="@color/colorAccent"
+
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+
+            app:amount="@{element.amount}"
+
+            app:drawableStartCompat="@drawable/ic_money_lite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toTv"
+
+            app:layout_constraintVertical_bias="0.5"
+            tools:text="200$"
+             />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
