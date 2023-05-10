@@ -30,6 +30,5 @@ data class Transaction(
     @ColumnInfo(name = "toUser") val toUser: User,
     @ColumnInfo(name = "amount") val amount: Int,
 
-
     ) : Parcelable
 

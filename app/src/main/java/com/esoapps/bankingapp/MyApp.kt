@@ -8,6 +8,7 @@ class MyApp : Application() {
 
 
     private val database by lazy { AppDatabase.getAppDatabase(this) }
+
     val repository by lazy {
         MainRepository(
             database.userDao,

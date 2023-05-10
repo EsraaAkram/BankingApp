@@ -43,7 +43,11 @@ class MainActivity : AppCompatActivity() {
         ) {//ADD USERS I IT ONLY FIRST OPEN
 
             viewModel.addUsers()
-            sharedpreferences?.edit()?.putBoolean(FIRST_TIME_OPEN, true)?.apply()
+
+            sharedpreferences?.edit()?.putBoolean(
+                FIRST_TIME_OPEN,
+                true
+            )?.apply()
         }
 
     }

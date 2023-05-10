@@ -21,11 +21,10 @@ interface UserDao {
     suspend fun updateUser(user: User?)
 
 
-
 }
 
 @Dao
-interface TransactionDao{
+interface TransactionDao {
 
     @Query("SELECT * FROM ${Constants.TRANSACTIONS_TABLE_NAME}")
     fun getAllDbTransactions(): Flow<List<Transaction>>
